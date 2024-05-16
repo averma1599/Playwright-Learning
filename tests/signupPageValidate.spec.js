@@ -17,9 +17,6 @@ test.describe("tests for shreesrb website page valide", async () => {
 
     });
 
-    // test('test2 Activate sign up user valide"', async ({ page }) => {
-    //     let signupPage = new SignupPage();
-    //     await signupPage.ActiveSignUpUser(page);
 
 
     // });

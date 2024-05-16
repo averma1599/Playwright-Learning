@@ -32,23 +32,6 @@ export class SignupPage {
 
     }
 
-    ActiveSignUpUser = async (page) => {
-        await page.goto('https://shreesrb.com/admin/');
-        await page.getByPlaceholder('Enter User Name').fill('admin');
-        await page.getByPlaceholder('Password').fill('Admin@#123');
-        await page.getByRole('button', { name: 'SIGN IN' }).click();
-        await page.locator(this.SignUpFormDetail.userbtn).click();
-        await page.locator(this.SignUpFormDetail.managebtn).click();
-        await page.getByRole('link', { name: '7' }).click();
-
-        page.once('dialog', dialog => {
-            console.log(`Dialog message: ${dialog.message()}`);
-            dialog.dismiss().catch(() => { });
-        });
-        await page.getByRole('row', { name: gengmail }).getByRole('link').first().click();
-        await page.waitForTimeout(5000);
-        await page.getByRole('button', { name: 'OK' }).click();
-    }
     // LoginUserValidation = async () => {
     //     await page.goto('https://shreesrb.com/');
     //     await page.getByRole('tab', { name: 'Login' }).click();
